@@ -1,0 +1,47 @@
+﻿<Window x:Class="easyeftthc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:easyeftthc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="359">
+    <Grid>
+        <Button Margin="0,174,185,125" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="aac-logo-standard-bank.jpg"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Margin="208,174,0,125" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Capitec.jpg"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Margin="0,299,185,0" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="absa-logo.jpg"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Margin="206,299,2,0" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="nedbank-logo-600.jpg"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="135,66,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="54"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="109,130,0,0" TextWrapping="Wrap" Text="Please Select a Bank:" VerticalAlignment="Top" Width="110"/>
+        <Image Source="thc.jpg" Margin="210,0,0,342" />
+
+
+    </Grid>
+</Window>
