@@ -5,43 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:easyeftthc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="359">
-    <Grid>
-        <Button Margin="0,174,185,125" Click="Button_Click">
+        ResizeMode="CanMinimize"
+        Title="MainWindow" Height="482" Width="596">
+
+    <Grid Margin="0,0,2,22">
+        <Button Margin="25,174,392,125" Click="Button_Click">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="aac-logo-standard-bank.jpg"/>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <Image Source="aac-logo-standard-bank.jpg"/>
+                    </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
 
-        <Button Margin="208,174,0,125" Click="Button_Click">
+        <Button x:Name="Capitec" Margin="199,174,218,0" Click="Capitec_Click" RenderTransformOrigin="0.571,0.483" Height="121" VerticalAlignment="Top">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="Capitec.jpg"/>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <Image Source="Capitec.jpg"/>
+                    </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
 
-        <Button Margin="0,299,185,0" Click="Button_Click">
+        <Button Margin="373,174,44,125" Click="Button_Click" RenderTransformOrigin="0.571,0.483">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="absa-logo.jpg"/>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <Image Source="FNB1.jpg"/>
+                    </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
 
-        <Button Margin="206,299,2,0" Click="Button_Click">
+        <Button Margin="25,309,392,-10" Click="Button_Click">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="nedbank-logo-600.jpg"/>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <Image Source="absa-logo.jpg"/>
+                    </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="135,66,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="54"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="109,130,0,0" TextWrapping="Wrap" Text="Please Select a Bank:" VerticalAlignment="Top" Width="110"/>
-        <Image Source="thc.jpg" Margin="210,0,0,342" />
 
-
+        <Button Margin="199,309,218,-10" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <Image Source="nedbank-logo-600.jpg"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="25,138,0,0" TextWrapping="Wrap" Text="Please Select a Bank:" VerticalAlignment="Top" Width="142" FontSize="14" FontWeight="Bold"/>
+        <Slider Height="0" Margin="0,151,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Height="53" Margin="217,34,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="172" FontSize="36" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <Image Source="thc.jpg" Margin="10,0,483,366" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="95" Margin="10,10,0,0" VerticalAlignment="Top" Width="556"/>
     </Grid>
 </Window>

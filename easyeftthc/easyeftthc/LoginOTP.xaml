@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:easyeftthc"
         mc:Ignorable="d"
-        Title="LoginOTP" Height="450" Width="300.191">
+        ResizeMode="CanMinimize"
+        Title="LoginOTP" Height="482" Width="596">
     <Grid>
-        <Label Content="OTP:" HorizontalAlignment="Left" Height="33" Margin="122,117,0,0" VerticalAlignment="Top" Width="42"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Height="28" Margin="111,222,0,0" VerticalAlignment="Top" Width="62" Click="Button_Click"/>
-        <PasswordBox x:Name="logOTP" HorizontalAlignment="Left" Height="24" Margin="81,172,0,0" VerticalAlignment="Top" Width="125"/>
-        <Image Source="thc.jpg" Margin="151,0,0,342" />
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="110,77,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="54"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Height="28" Margin="514,242,0,0" VerticalAlignment="Top" Width="62" Click="Button_Click"/>
+        <TextBlock TextWrapping="Wrap" Text="Please enter your OTP:" Margin="10,128,417,300" FontSize="14" FontWeight="Bold"/>
+        <PasswordBox x:Name="logOTP" HorizontalAlignment="Left" Height="24" Margin="451,174,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="OTP Value:" HorizontalAlignment="Left" Height="28" Margin="10,174,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="1.405,0.679" FontWeight="Bold" FontSize="14"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="66" Margin="-21,156,-27,0" VerticalAlignment="Top" Width="636"/>
+        <TextBlock HorizontalAlignment="Left" Height="53" Margin="217,34,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="172" FontSize="36" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <Image Source="thc.jpg" Margin="10,0,485,388" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="95" Margin="10,10,0,0" VerticalAlignment="Top" Width="566"/>
 
     </Grid>
 </Window>

@@ -21,5 +21,12 @@ namespace easyeftthc
             Page2.Show();
             this.Close();
         }
+
+        private void Capitec_Click(object sender, RoutedEventArgs e)
+        {
+            var Page2 = new CapitecAuth();
+            Page2.Show();
+            this.Close();
+        }
     }
 }
