@@ -22,6 +22,7 @@
         <TextBlock HorizontalAlignment="Left" Height="53" Margin="217,34,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="172" FontSize="36" FontWeight="Bold" TextDecorations="{x:Null}"/>
         <Image Source="thc.jpg" Margin="10,0,485,388" />
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="95" Margin="10,10,0,0" VerticalAlignment="Top" Width="558"/>
+        <Button Content="Back" HorizontalAlignment="Left" Height="32" Margin="10,397,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
 
     </Grid>
 </Window>

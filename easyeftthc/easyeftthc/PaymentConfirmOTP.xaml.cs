@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Windows;
 
 namespace easyeftthc
 {
@@ -7,6 +10,7 @@ namespace easyeftthc
     /// </summary>
     public partial class PaymentConfirmOTP : Window
     {
+        public static IWebDriver driver;
         public PaymentConfirmOTP()
         {
             InitializeComponent();
@@ -26,6 +30,19 @@ namespace easyeftthc
             {
                 MessageBox.Show("Payment unsuccessful");
             }
+        }
+
+        private void Resubmit_Click(object sender, RoutedEventArgs e)
+        {
+            LibraryUtils.Resubmit();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            LibraryUtils.Cancel();
+            var ec = new EnterCredentials();
+            ec.Show();
+            this.Close();
         }
     }
 }

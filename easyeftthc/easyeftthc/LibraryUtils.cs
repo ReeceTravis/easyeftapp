@@ -3,8 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
-using System.IO;
-using System.Reflection;
 using System.Windows;
 
 /// <summary>
@@ -272,5 +270,18 @@ public static class LibraryUtils
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'otp']"))).SendKeys(otp);
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Submit']/.."))).Click();
+    }
+
+    public static void Resubmit()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Resend']/.."))).Click();
+    }
+
+    public static void Cancel()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[@id='cancel-button']"))).Click();
+        driver.Quit();
     }
 }

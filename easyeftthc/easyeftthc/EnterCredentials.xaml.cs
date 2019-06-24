@@ -1,17 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace easyeftthc
 {
@@ -34,6 +22,7 @@ namespace easyeftthc
             var Page2 = new PaymentConfirmOTP();
             var Page3 = new LoginOTP();
             var ec = new EnterCredentials();
+            
             LibraryUtils.EmailLogin(user, pass);
 
             if (LibraryUtils.IsElementPresent(By.XPath("//span[contains(text(), 'Incorrect')]")))
@@ -52,6 +41,13 @@ namespace easyeftthc
                 LibraryUtils.aftermoney();
                 this.Close();
             }
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            var mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
     }
 }

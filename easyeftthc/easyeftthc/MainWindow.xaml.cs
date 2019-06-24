@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium;
-using System.Windows;
+﻿using System.Windows;
 
 namespace easyeftthc
 {
