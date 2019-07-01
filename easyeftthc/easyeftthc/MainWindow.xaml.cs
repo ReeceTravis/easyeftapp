@@ -27,5 +27,26 @@ namespace easyeftthc
             Page2.Show();
             this.Close();
         }
+
+        private void Nedbank_Click(object sender, RoutedEventArgs e)
+        {
+            var Page2 = new NedbankAuth();
+            Page2.Show();
+            this.Close();
+        }
+
+        private void FNB_Click(object sender, RoutedEventArgs e)
+        {
+            var Page2 = new FNBAuth();
+            Page2.Show();
+            this.Close();
+        }
+
+        private void ABSA_Click(object sender, RoutedEventArgs e)
+        {
+            var Page2 = new ABSAAuth();
+            Page2.Show();
+            this.Close();
+        }
     }
 }

@@ -8,7 +8,7 @@
         ResizeMode="CanMinimize"
         Title="CapitecAuth" Height="482" Width="596">
     <Grid>
-        <TextBox x:Name="username" HorizontalAlignment="Left" Height="25" Margin="432,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="username" HorizontalAlignment="Left" Height="25" Margin="432,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" TextAlignment="Right"/>
         <PasswordBox x:Name="password" HorizontalAlignment="Left" Height="25" Margin="432,269,0,0" VerticalAlignment="Top" Width="125"/>
         <TextBox x:Name="recemail" HorizontalAlignment="Left" Height="25" Margin="432,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125"/>
         <Button Content="Submit" HorizontalAlignment="Left" Height="32" Margin="477,397,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>

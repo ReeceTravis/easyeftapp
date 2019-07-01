@@ -17,7 +17,8 @@ namespace easyeftthc
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string otp = conotp.Password;
-            
+            var ec = new EnterCredentials();
+
             LibraryUtils.OTPSequence(otp);
 
             if (LibraryUtils.con.Contains("successful"))
@@ -28,6 +29,9 @@ namespace easyeftthc
             {
                 MessageBox.Show("Payment unsuccessful");
             }
+
+            ec.Show();
+            this.Close();
         }
 
         private void Resubmit_Click(object sender, RoutedEventArgs e)

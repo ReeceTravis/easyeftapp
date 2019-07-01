@@ -31,6 +31,17 @@ namespace easyeftthc
 
             MessageBox.Show("Please check mobile banking app");
 
+            Capitec.confirmPay();
+
+            if (Capitec.stat.Equals("Successful"))
+            {
+                MessageBox.Show("Payment successful");
+            }
+            else
+            {
+                MessageBox.Show("Payment unsuccessful");
+            }
+
             Capitec.conPay2();
         }
 

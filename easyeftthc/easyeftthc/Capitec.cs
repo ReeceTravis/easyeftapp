@@ -10,12 +10,13 @@ public class Capitec
 {
     static IWebDriver driver;
     public static string fail;
+    public static string stat;
 
     public static void CapitecLog(String email, String password)
     {
         ChromeOptions option = new ChromeOptions();
         option.AddArguments("--headless", "--disable-gpu", "--window-size=1200,900");
-        driver = new ChromeDriver("C:\\Users\\Public", option);
+        driver = new ChromeDriver(option);
 
         driver.Navigate().GoToUrl("https://direct.capitecbank.co.za/ibank/");
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -109,29 +110,54 @@ public class Capitec
         wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//html/body/div[4]")));
     }
 
-    public static void conPay2()
+    public static void confirmPay()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
-
-        wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//html/body/div[4]")));
 
         driver.SwitchTo().DefaultContent();
 
         driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame"))));
 
-        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[text() = 'Make another payment']"))).Click();
+        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[text() = 'Status:']/..//em")));
 
-        driver.SwitchTo().DefaultContent();
+        stat = driver.FindElement(By.XPath("//div[text() = 'Status:']/..//em")).Text;
 
-        driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame"))));
+        if(stat.Equals("Successful"))
+        {
 
-        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@name = 'selectedBeneficiary']//option[contains(text(), 'Traverse')]"))).Click();
+        }
+        else
+        {
 
-        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[text() = 'Remove the selected beneficiary']"))).Click();
+        }
 
-        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Yes']"))).Click();
 
-        driver.Quit();
+    }
+
+    public static void conPay2()
+    {
+        
+         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+         WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
+
+         wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//html/body/div[4]")));
+
+         driver.SwitchTo().DefaultContent();
+
+         driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame"))));
+
+         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[text() = 'Make another payment']"))).Click();
+
+         driver.SwitchTo().DefaultContent();
+
+         driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame"))));
+
+         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@name = 'selectedBeneficiary']//option[contains(text(), 'Traverse')]"))).Click();
+
+         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[text() = 'Remove the selected beneficiary']"))).Click();
+
+         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Yes']"))).Click();
+
+         driver.Quit();
     }
 }

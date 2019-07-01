@@ -29,6 +29,8 @@ C:\Users\Reece.SYNTELL\source\repos\easyeftthc\easyeftthc\obj\Debug\easyeftthc.c
 C:\Users\Reece.SYNTELL\source\repos\easyeftthc\easyeftthc\obj\Debug\easyeftthc.exe
 C:\Users\Reece.SYNTELL\source\repos\easyeftthc\easyeftthc\obj\Debug\easyeftthc.pdb
 C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\easyeftthc.exe.config
+C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\easyeftthc.exe.manifest
+C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\easyeftthc.application
 C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\easyeftthc.exe
 C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\easyeftthc.pdb
 C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\Microsoft.Web.XmlTransform.dll
@@ -41,6 +43,7 @@ C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\Selenium.WebDriver.Equip.pdb
 C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\WebDriver.xml
 C:\easyeftapp\easyeftthc\easyeftthc\bin\Debug\WebDriver.Support.xml
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.csprojAssemblyReference.cache
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\CapitecAuth.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\EnterCredentials.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\LoginOTP.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\MainWindow.g.cs
@@ -48,6 +51,7 @@ C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\PaymentConfirmOTP.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\App.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc_MarkupCompile.cache
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc_MarkupCompile.lref
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\CapitecAuth.baml
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\EnterCredentials.baml
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\LoginOTP.baml
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\MainWindow.baml
@@ -56,8 +60,15 @@ C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.g.resources
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.Properties.Resources.resources
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.csproj.GenerateResource.cache
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.csproj.CoreCompileInputs.cache
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.exe.manifest
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.application
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.csproj.CopyComplete
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.exe
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc.pdb
-C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\CapitecAuth.g.cs
-C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\CapitecAuth.baml
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\easyeftthc_Content.g.cs
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\NedbankAuth.g.cs
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\NedbankAuth.baml
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\FNBAuth.g.cs
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\FNBAuth.baml
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\ABSAAuth.g.cs
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\ABSAAuth.baml

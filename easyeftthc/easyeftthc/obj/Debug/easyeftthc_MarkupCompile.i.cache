@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\easyeftapp\easyeftthc\easyeftthc\App.xaml
-52139461911
-
-121919541858
+8-378586244
+1-1506881804
+181564147992
 19-881786751
-CapitecAuth.xaml;EnterCredentials.xaml;LoginOTP.xaml;MainWindow.xaml;PaymentConfirmOTP.xaml;
+ABSAAuth.xaml;CapitecAuth.xaml;EnterCredentials.xaml;FNBAuth.xaml;LoginOTP.xaml;MainWindow.xaml;NedbankAuth.xaml;PaymentConfirmOTP.xaml;
 
 True
 

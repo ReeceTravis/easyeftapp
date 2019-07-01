@@ -29,7 +29,7 @@
             </Button.Template>
         </Button>
 
-        <Button Margin="373,174,44,125" Click="Button_Click" RenderTransformOrigin="0.571,0.483">
+        <Button Margin="373,174,44,125" Click="FNB_Click" RenderTransformOrigin="0.571,0.483">
             <Button.Template>
                 <ControlTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">
@@ -39,7 +39,7 @@
             </Button.Template>
         </Button>
 
-        <Button Margin="25,309,392,-10" Click="Button_Click">
+        <Button Margin="25,309,392,-10" Click="ABSA_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">
@@ -49,7 +49,7 @@
             </Button.Template>
         </Button>
 
-        <Button Margin="199,309,218,-10" Click="Button_Click">
+        <Button Margin="199,309,218,-10" Click="Nedbank_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">

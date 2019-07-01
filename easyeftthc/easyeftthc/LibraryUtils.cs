@@ -229,7 +229,7 @@ public static class LibraryUtils
         //string opt = Convert.ToString(service);
         //opt += @".chromedriver";
         //option.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe";
-        System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
+        //System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
         driver = new ChromeDriver(/*service,*/ option);
 
         driver.Navigate().GoToUrl("https://onlinebanking.standardbank.co.za/#/login?intcmp=coza-sitewide-headernav-direct-login");
