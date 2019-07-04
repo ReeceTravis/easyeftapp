@@ -30,16 +30,22 @@ namespace easyeftthc
             string piN = pin.Password;
             string pass = password.Password;
             //rec = recemail.Text;
+            var Page2 = new ABSAPhraseCapture();
 
             ABSA.ABSALog(user, piN, pass);
 
-            MessageBox.Show("Please check mobile banking app");
+
+            //ABSAPhraseCapture.phrase
+            Page2.Show();
+            this.Close();
+
+            /*MessageBox.Show("Please check mobile banking app");
 
             //Nedbank.conCap(rec);
 
             MessageBox.Show("Please check mobile banking app");
 
-            Nedbank.conPay1();
+            //Nedbank.conPay1();
 
             MessageBox.Show("Please check mobile banking app");
 
@@ -54,7 +60,7 @@ namespace easyeftthc
                 MessageBox.Show("Payment unsuccessful");
             }
 
-            Nedbank.conPay2();
+           // Nedbank.conPay2();*/
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

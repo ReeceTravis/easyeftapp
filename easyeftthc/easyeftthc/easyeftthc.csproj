@@ -105,6 +105,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ABSAPhraseCapture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CapitecAuth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FNBAuth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FNBOTP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,6 +137,9 @@
     <Compile Include="ABSAAuth.xaml.cs">
       <DependentUpon>ABSAAuth.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ABSAPhraseCapture.xaml.cs">
+      <DependentUpon>ABSAPhraseCapture.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -143,6 +154,9 @@
     <Compile Include="FNB.cs" />
     <Compile Include="FNBAuth.xaml.cs">
       <DependentUpon>FNBAuth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FNBOTP.xaml.cs">
+      <DependentUpon>FNBOTP.xaml</DependentUpon>
     </Compile>
     <Compile Include="LibraryUtils.cs" />
     <Compile Include="LoginOTP.xaml.cs">

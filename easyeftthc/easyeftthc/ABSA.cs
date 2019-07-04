@@ -12,6 +12,9 @@ namespace easyeftthc
         static IWebDriver driver;
         public static string fail;
         public static string stat;
+        public static string cphrase1;
+        public static string cphrase2;
+        public static string cphrase3;
 
         public static void ABSALog(String email, String pin, String password)
         {
@@ -29,17 +32,27 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'j_pin']"))).SendKeys(pin);
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'j_user_no']"))).SendKeys(password);
-
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[text() = 'Next']/.."))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@title= 'Close']"))).Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@defaultval = 'payments']//option[text() = 'Make a payment']"))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//font[text() = 'Payments']"))).Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff1']")));
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//font[text() = 'Pay']"))).Click();
+            cphrase1 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff1']")).GetAttribute("num");
+            cphrase2 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff2']")).GetAttribute("num");
+            cphrase3 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff3']")).GetAttribute("num");
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable']")));
+            ABSAPhraseCapture mw = new ABSAPhraseCapture();
+
+           // mw.phrase1
+           /* wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//font[text() = 'Pay']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable']")));*/
+        }
+
+        public static void phraseCapture()
+        {
+
         }
 
         public static void conCap(string rec)

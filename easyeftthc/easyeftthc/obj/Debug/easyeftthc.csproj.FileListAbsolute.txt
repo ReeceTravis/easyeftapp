@@ -72,3 +72,7 @@ C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\FNBAuth.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\FNBAuth.baml
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\ABSAAuth.g.cs
 C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\ABSAAuth.baml
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\FNBOTP.g.cs
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\FNBOTP.baml
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\ABSAPhraseCapture.g.cs
+C:\easyeftapp\easyeftthc\easyeftthc\obj\Debug\ABSAPhraseCapture.baml
