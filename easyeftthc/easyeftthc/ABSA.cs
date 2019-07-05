@@ -2,8 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using System.Threading;
-using System.Windows;
+using System.Windows.Media;
 
 namespace easyeftthc
 {
@@ -15,6 +14,8 @@ namespace easyeftthc
         public static string cphrase1;
         public static string cphrase2;
         public static string cphrase3;
+        public static string tphrase1;
+        public static string tphrase2;
 
         public static void ABSALog(String email, String pin, String password)
         {
@@ -25,8 +26,6 @@ namespace easyeftthc
             driver.Navigate().GoToUrl("https://ib.absa.co.za/absa-online/login.jsp");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
-
-           // driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame[@name = 'frameMain']"))));
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'j_username']"))).SendKeys(email);
 
@@ -42,17 +41,89 @@ namespace easyeftthc
             cphrase2 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff2']")).GetAttribute("num");
             cphrase3 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff3']")).GetAttribute("num");
 
-            ABSAPhraseCapture mw = new ABSAPhraseCapture();
-
-           // mw.phrase1
-           /* wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//font[text() = 'Pay']"))).Click();
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable']")));*/
+            
         }
 
-        public static void phraseCapture()
+        public static void payNav()
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class = 'ui-button-left']//div[text() = 'Logon']/.."))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[text() = 'Once-off payment']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text() = 'Once-off payment']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ap-timer-left']")));
+        }
+
+        public static void makepay()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
+
+            wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class = 'ap-timer-left']")));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-nonAbsaListedAccount']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-beneficiaryName']"))).SendKeys("Traverse");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-bankName']"))).SendKeys("STANDARD BANK SA LTD");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[text() = 'ARD BANK SA LTD']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-beneficiaryBranch']"))).SendKeys("051001");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = '051001']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-accountNumber']"))).SendKeys("270657282");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-amount']"))).SendKeys("1");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-myReference']"))).SendKeys("MyRef");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'payOnceOffBeneficiary-beneficiaryReference']"))).SendKeys("BenRef");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@id = 'paymentNotification-notMyType']//option[text() = 'E-mail']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'paymentNotification-notMyEmail']"))).SendKeys("traversek@gmail.com");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@id = 'paymentNotification-notBenType']//option[text() = 'E-mail']"))).Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'paymentNotification-notBenEmail']"))).SendKeys("rtzyster@gmail.com");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'paymentNotification-notBenName']"))).SendKeys("Reece");
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class = 'ui-button-left']//div[text() = 'Next']/.."))).Click();
+        }
+
+        public static void phraseCapturepoint1(string point1)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff1']"))).SendKeys(point1);
+        }
+
+        public static void phraseCapturepoint2(string point2)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff2']"))).SendKeys(point2);
+        }
+
+        public static void phraseCapturepoint3(string point3)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff3']"))).SendKeys(point3);
+        }
+
+        public static void getphrase1()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            tphrase1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff1']"))).GetAttribute("value");
+        }
+        public static void getphrase2()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            tphrase2 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff2']"))).GetAttribute("value");
         }
 
         public static void conCap(string rec)

@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:easyeftthc"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="ABSAPhraseCapture" Height="482" Width="596">
+        Title="ABSAPhraseCapture" Height="482" Width="596" ContentRendered="Window_ContentRendered">
     <Grid x:Name="aBsA">
-        <TextBox x:Name="phrase1" HorizontalAlignment="Left" Height="47" Margin="55,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
         <Button Content="Submit" HorizontalAlignment="Left" Height="32" Margin="477,397,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
         <Label x:Name="phraseheader" Content="Please type the following characters from your password:" HorizontalAlignment="Left" Height="34" Margin="10,213,0,0" VerticalAlignment="Top" Width="398" FontWeight="Bold" FontSize="14"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="71" Margin="-20,119,-11,0" VerticalAlignment="Top" Width="619">
@@ -18,14 +17,15 @@
         <Image Source="thc.jpg" Margin="10,0,485,388" />
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="95" Margin="10,10,0,0" VerticalAlignment="Top" Width="558"/>
         <Button Content="Back" HorizontalAlignment="Left" Height="32" Margin="10,397,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
-        <TextBox x:Name="phrase2" HorizontalAlignment="Left" Height="47" Margin="110,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase3" HorizontalAlignment="Left" Height="47" Margin="165,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase4" HorizontalAlignment="Left" Height="47" Margin="214,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase5" HorizontalAlignment="Left" Height="47" Margin="266,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase6" HorizontalAlignment="Left" Height="48" Margin="315,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase7" HorizontalAlignment="Left" Height="47" Margin="364,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase8" HorizontalAlignment="Left" Height="47" Margin="413,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
-        <TextBox x:Name="phrase9" HorizontalAlignment="Left" Height="46" Margin="462,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" TextAlignment="Right" x:FieldModifier="public" IsEnabled="False"/>
+        <PasswordBox x:Name="phrase1" HorizontalAlignment="Left" Height="47" Margin="55,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase2" HorizontalAlignment="Left" Height="47" Margin="108,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase3" HorizontalAlignment="Left" Height="47" Margin="163,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase4" HorizontalAlignment="Left" Height="47" Margin="218,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase5" HorizontalAlignment="Left" Height="47" Margin="273,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase6" HorizontalAlignment="Left" Height="47" Margin="328,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase7" HorizontalAlignment="Left" Height="47" Margin="383,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase8" HorizontalAlignment="Left" Height="47" Margin="438,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
+        <PasswordBox x:Name="phrase9" HorizontalAlignment="Left" Height="47" Margin="493,288,0,0" VerticalAlignment="Top" Width="50" x:FieldModifier="public" IsEnabled="False" MaxLength="1"/>
 
     </Grid>
 </Window>

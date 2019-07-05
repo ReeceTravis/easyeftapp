@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="easyeftthc.exe" size="233904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="easyeftthc.exe" size="241072">
       <assemblyIdentity name="easyeftthc" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6OOwJ8OFwk4ppcRK/ifg7QFsN8x9ziHLcQFONu2FmWE=</dsig:DigestValue>
+        <dsig:DigestValue>a0wzq9UHTI5TgfiESPX0Pn+NJfrXyLltuFQz4slF1IE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
