@@ -199,6 +199,20 @@ namespace easyeftthc
 
             ABSA.makepay();
 
+            MessageBox.Show("Please check mobile banking app");
+
+            ABSA.confirmPay();
+
+            if (ABSA.stat.Equals("Payment successful"))
+            {
+                MessageBox.Show("Payment successful");
+            }
+            else
+            {
+                MessageBox.Show("Payment unsuccessful");
+            }
+
+            ABSA.DeleteBen();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
