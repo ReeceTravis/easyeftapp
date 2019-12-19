@@ -52,15 +52,16 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class = 'ui-button-left']//div[text() = 'Logon']/.."))).Click();
 
-            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text() = 'My beneficiaries - new and existing']")));
+            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@id]//span[text() = 'Pay']")));
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[text() = 'My beneficiaries - new and existing']"))).Click();
+            
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@id]//span[text() = 'Pay']"))).Click();
 
-            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//li[text() = 'Add beneficiary or group']")));
+            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[@class = 'icon-pay-once-off']/..")));
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text() = 'Add beneficiary or group']"))).Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[@class = 'icon-pay-once-off']/.."))).Click();
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ap-timer-left']")));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text() = 'Seconds remaining']")));
         }
 
         public static void makepay()
@@ -68,37 +69,49 @@ namespace easyeftthc
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
 
-            wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class = 'ap-timer-left']")));
+            wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[text() = 'Seconds remaining']")));
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-externalAccount']"))).Click();
+           // wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-externalAccount']"))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-beneficiaryName']"))).SendKeys("Traverse");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@name = 'fullName']"))).SendKeys("Traverse");
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-bankName']"))).SendKeys("STANDARD BANK SA LTD");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder= 'Capture and select bank name']"))).SendKeys("STANDARD BANK SA LTD");
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text() = 'STANDARD BANK SA LTD']"))).Click();
+           // wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text() = 'STANDARD BANK SA LTD']"))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-bankName']"))).SendKeys(Keys.ArrowDown);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder= 'Capture and select bank name']"))).SendKeys(Keys.ArrowDown);
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-bankName']"))).SendKeys(Keys.Enter);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder= 'Capture and select bank name']"))).SendKeys(Keys.Enter);
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-beneficiaryBranch']"))).SendKeys("051001");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder= 'Capture and select the Branch name or Branch code']"))).SendKeys("051001");
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text() = '051001']")));
+            //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text() = '051001']")));
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-beneficiaryBranch']"))).SendKeys(Keys.ArrowDown);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder= 'Capture and select the Branch name or Branch code']"))).SendKeys(Keys.ArrowDown);
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-beneficiaryBranch']"))).SendKeys(Keys.Enter);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@placeholder= 'Capture and select the Branch name or Branch code']"))).SendKeys(Keys.Enter);
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-accountNumber']"))).SendKeys("270657282");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@name = 'accountNumber']"))).SendKeys("270657282");
+			
+			wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@id= 'accountType']"))).Click();
+			
+			wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Cheque Account']"))).Click();
+			
+			wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@name = 'amount']"))).SendKeys("1");
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-myReference']"))).SendKeys("MyRef1");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@name = 'myReference']"))).SendKeys("MyRef1");
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'addBeneficiary-beneficiaryReference']"))).SendKeys("BenRef1");
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@name = 'beneficiaryReference']"))).SendKeys("BenRef1");
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@id = 'paymentNotification-notMyType']//option[text() = 'E-mail']"))).Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[text() = 'Next']"))).Click();
+			
+			wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//h1[text() = ' This beneficiary already exists']/../..//span[@class = 'radio-control__indicator']"))).Click();
+			
+			wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[text() = ' Use existing beneficiary ']"))).Click();
+			
+			wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[text() = 'Confirm']"))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@id = 'paymentNotification-notBenType']//option[text() = 'E-mail']"))).Click();
+          /*  wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//select[@id = 'paymentNotification-notBenType']//option[text() = 'E-mail']"))).Click();
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'paymentNotification-notBenEmail']"))).SendKeys("rtzyster@gmail.com");
 
@@ -114,9 +127,9 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id='ui-wizard-body1']/div/form/div[2]/div[4]/div/button[3]/div/div/div"))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class = 'ui-button-left']//div[text() = 'Pay']/.."))).Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class = 'ui-button-left']//div[text() = 'Pay']/.."))).Click();*/
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ap-timer-left']")));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text() = 'Seconds remaining']")));
         }
 
         public static void DeleteBen()
@@ -142,11 +155,11 @@ namespace easyeftthc
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
 
-            wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class = 'ap-timer-left']")));
+            wait1.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[text() = 'Seconds remaining']")));
 
-            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='ui-wizard-body3']/div/div[1]/div/div/div[3]/div/div[3]/div/span[1]")));
+            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'status-panel-header__text']//h4[contains(@class, 'status-panel-header__title')]")));
 
-            stat = driver.FindElement(By.XPath("//*[@id='ui-wizard-body3']/div/div[1]/div/div/div[3]/div/div[3]/div/span[1]")).Text;
+            stat = driver.FindElement(By.XPath("//div[@class = 'status-panel-header__text']//h4[contains(@class, 'status-panel-header__title')]")).Text;
         }
 
         public static void phraseCapturepoint1(string point1)

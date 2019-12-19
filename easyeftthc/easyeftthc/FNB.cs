@@ -15,7 +15,7 @@ namespace easyeftthc
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArguments("--headless", "--disable-gpu", "--window-size=1200,900");
-            driver = new ChromeDriver(option);
+            driver = new ChromeDriver(/*option*/);
 
             driver.Navigate().GoToUrl("https://www.fnb.co.za/ways-to-bank/online-banking.html");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -27,7 +27,12 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'OBSubmit']"))).Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[@class = 'iconImage ui-icon ui-icon_reservedPayments']"))).Click();
+           // if(wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'gridCol grid10 footerBtn ']//a")))
+           // {
+           //     wait1.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class = 'gridCol grid10 footerBtn ']//a"))).Click();
+           // }
+
+            wait1.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[@class = 'iconImage ui-icon ui-icon_reservedPayments']"))).Click();
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[text() = 'Once Off']"))).Click();
 

@@ -212,7 +212,7 @@ namespace easyeftthc
                 MessageBox.Show("Payment unsuccessful");
             }
 
-            ABSA.DeleteBen();
+           // ABSA.DeleteBen();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

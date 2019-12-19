@@ -15,7 +15,7 @@ namespace easyeftthc
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArguments("--headless", "--disable-gpu", "--window-size=1200,900");
-            driver = new ChromeDriver(option);
+            driver = new ChromeDriver(/*option*/);
 
             driver.Navigate().GoToUrl("https://netbank.nedsecure.co.za/default.aspx");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

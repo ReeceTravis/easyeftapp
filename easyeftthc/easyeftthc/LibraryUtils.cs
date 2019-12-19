@@ -1,6 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 using System.Windows;
@@ -195,6 +196,10 @@ public static class LibraryUtils
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'Bank-input']"))).SendKeys("standard bank");
 
+        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'Bank-input']"))).SendKeys(Keys.Enter);
+
+        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'accountNumber']"))).Click();
+
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'accountNumber']"))).SendKeys("10091879696");
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'myReference']"))).SendKeys("eft test");
@@ -219,7 +224,7 @@ public static class LibraryUtils
 
     public static void EmailLogin(String email, String password)
     {
-        ChromeOptions option = new ChromeOptions();
+        FirefoxOptions option = new FirefoxOptions();
         option.AddArguments("--headless", "--disable-gpu", "--window-size=1200,900");
         //System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", @"C:\EFT\chromedriver.exe");
         //driver = new ChromeDriver("C:\\EFT", option);
@@ -230,9 +235,13 @@ public static class LibraryUtils
         //opt += @".chromedriver";
         //option.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe";
         //System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver.exe");
-        driver = new ChromeDriver(/*service,*/ option);
+       // ChromeOptions opts = new ChromeOptions();
+       // opts.AddExcludedArgument("enable-automation");
+        //opts.AddAdditionalCapability("useAutomationExtension", false);
+        driver = new FirefoxDriver(/*service,*/ option);
 
-        driver.Navigate().GoToUrl("https://onlinebanking.standardbank.co.za/#/login?intcmp=coza-sitewide-headernav-direct-login");
+        //driver.Navigate().GoToUrl("https://onlinebanking.standardbank.co.za/#/login?intcmp=coza-sitewide-headernav-direct-login");
+        driver.Navigate().GoToUrl("https://onlinebanking.standardbank.co.za/#/login");
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'username']"))).SendKeys(email);
@@ -256,9 +265,9 @@ public static class LibraryUtils
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Submit']/.."))).Click();
 
-        wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//html/body/div[1]/div[1]/main/div/div[2]/div[1]/span/span")));
+        wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'notification ng-scope success']//span//span")));
 
-        con = driver.FindElement(By.XPath("//html/body/div[1]/div[1]/main/div/div[2]/div[1]/span/span")).Text.ToString();
+        con = driver.FindElement(By.XPath("//div[@class = 'notification ng-scope success']//span//span")).Text.ToString();
 
         driver.Quit();
     }
