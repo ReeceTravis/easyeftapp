@@ -12,6 +12,8 @@ public class Capitec
     public static string fail;
     public static string stat;
 
+    
+    //REFER TO CAPITECAUTH on how methods were used
     public static void CapitecLog(String email, String password)
     {
         ChromeOptions option = new ChromeOptions();

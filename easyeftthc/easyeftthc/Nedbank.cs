@@ -11,6 +11,8 @@ namespace easyeftthc
         public static string fail;
         public static string stat;
 
+
+        //REFER TO NEDBANKAUTH for how methods were called
         public static void NedbankLog(String email, String pin, String password)
         {
             ChromeOptions option = new ChromeOptions();

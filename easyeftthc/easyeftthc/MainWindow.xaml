@@ -63,5 +63,6 @@
         <TextBlock HorizontalAlignment="Left" Height="53" Margin="217,34,0,0" TextWrapping="Wrap" Text="EASY EFT" VerticalAlignment="Top" Width="172" FontSize="36" FontWeight="Bold" TextDecorations="{x:Null}"/>
         <Image Source="thc.jpg" Margin="10,0,483,366" />
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="95" Margin="10,10,0,0" VerticalAlignment="Top" Width="556"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="404,337,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_1"/>
     </Grid>
 </Window>

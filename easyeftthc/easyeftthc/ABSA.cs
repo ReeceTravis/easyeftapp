@@ -16,6 +16,8 @@ namespace easyeftthc
         public static string tphrase1;
         public static string tphrase2;
 
+
+        //REFER TO ABSAAUTH AND ABSAPHRASECAPTURE on how methods were used
         public static void ABSALog(String email, String pin, String password)
         {
             ChromeOptions option = new ChromeOptions();
@@ -132,7 +134,7 @@ namespace easyeftthc
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text() = 'Seconds remaining']")));
         }
 
-        public static void DeleteBen()
+     /*   public static void DeleteBen()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
@@ -148,7 +150,7 @@ namespace easyeftthc
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@role = 'alertdialog']//div[@class = 'ui-button-left']//div[text() = 'Remove']/.."))).Click();
 
             driver.Quit();
-        }
+        }*/
 
         public static void confirmPay()
         {

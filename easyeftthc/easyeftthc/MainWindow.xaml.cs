@@ -48,5 +48,10 @@ namespace easyeftthc
             Page2.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Netwerk.netwerk();
+        }
     }
 }

@@ -11,11 +11,13 @@ namespace easyeftthc
         public static string fail;
         public static string stat;
 
+
+        //REFER TO FNBAUTH AND FNBOTP for how methods were used
         public static void FNBLog(String email, String password)
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArguments("--headless", "--disable-gpu", "--window-size=1200,900");
-            driver = new ChromeDriver(/*option*/);
+            driver = new ChromeDriver(option);
 
             driver.Navigate().GoToUrl("https://www.fnb.co.za/ways-to-bank/online-banking.html");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
