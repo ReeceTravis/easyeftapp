@@ -12,7 +12,7 @@ namespace easyeftthc
         public static string stat;
 
 
-        //REFER TO FNBAUTH AND FNBOTP for how methods were used
+        //Method to be called when user clicks login
         public static void FNBLog(String email, String password)
         {
             ChromeOptions option = new ChromeOptions();
@@ -23,6 +23,8 @@ namespace easyeftthc
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
 
+
+            //Credentials to be called from log in screen
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'user']"))).SendKeys(email);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'pass']"))).SendKeys(password);
@@ -52,6 +54,8 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'accountNumber']"))).SendKeys("270657282");
 
+
+            //Amount to be called from front end
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'accountHowMuch']"))).SendKeys("1");
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'accountTheirReference']"))).SendKeys("test");
@@ -67,6 +71,8 @@ namespace easyeftthc
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[text() = 'Confirm']"))).Click();
         }
 
+
+        //Shhold be called when OTP is requested
         public static void loginOTP(String otp)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

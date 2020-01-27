@@ -21,7 +21,7 @@ public static class LibraryUtils
      
    
 
-     //CHECK ENTERCREDENTIALS, LOGINOTP AND PAYMENTCONFIRMOTP Screens for reference to how methods are called//
+     //Mehtod should be called after user enters credentialss and clicks the login button
     public static void EmailLogin(String email, String password)
     {
         FirefoxOptions option = new FirefoxOptions();
@@ -44,6 +44,7 @@ public static class LibraryUtils
         driver.Navigate().GoToUrl("https://onlinebanking.standardbank.co.za/#/login");
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
+        //Credentials will be called from login credentials page
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'username']"))).SendKeys(email);
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[text() = 'Next']"))).Click();
@@ -86,11 +87,15 @@ public static class LibraryUtils
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'Recipient_Email']"))).SendKeys(rec);
 
+
+        //Amount will be called form the front end
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'amount']"))).SendKeys("1");
     }
 
    
 
+
+    //Check should be pplaced to see if the user has enough credit for transaction, if they do not they should be notified  they don't have funds in account
     public static void money()
     {
         if (IsElementPresent(By.XPath("//span[text() = 'The amount exceeds your available balance']")))
@@ -100,6 +105,7 @@ public static class LibraryUtils
         }
     }
 
+    //Check should be pplaced to see if the user has enough credit for transaction, if they do not they should be notified  they don't have funds in account
     public static void aftermoney()
     {
         var Page2 = new easyeftthc.PaymentConfirmOTP();
@@ -116,7 +122,7 @@ public static class LibraryUtils
     }
 
    
-
+    //If user has enough credit the transaction can proceed
     public static void conPay()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -127,7 +133,7 @@ public static class LibraryUtils
     }
 
    
-
+    //Should be called when OTP is requested
     public static void OTPSequence(String otp)
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -155,6 +161,7 @@ public static class LibraryUtils
         }
     }
 
+    //USsed to click the login button
     public static void loginOTP(String otp)
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -164,12 +171,14 @@ public static class LibraryUtils
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Submit']/.."))).Click();
     }
 
+    //Used to click resubmit button
     public static void Resubmit()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text() = 'Resend']/.."))).Click();
     }
 
+    //Used to click cancel button
     public static void Cancel()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

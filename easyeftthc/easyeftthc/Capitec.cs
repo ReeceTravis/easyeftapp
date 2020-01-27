@@ -13,7 +13,7 @@ public class Capitec
     public static string stat;
 
     
-    //REFER TO CAPITECAUTH on how methods were used
+    //Method to be called when user clicks login button
     public static void CapitecLog(String email, String password)
     {
         ChromeOptions option = new ChromeOptions();
@@ -26,6 +26,7 @@ public class Capitec
 
         driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame"))));
 
+        //Credentials to be called from front end 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//form//input[@id = 'username']"))).SendKeys(email);
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@type = 'password']"))).SendKeys(password);
@@ -35,6 +36,9 @@ public class Capitec
         wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class = 'ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable']")));
     }
 
+
+    //Only after user confirms login on front end should the following be called 
+    //Does wait until timer disappears
     public static void conCap(string rec)
     {
 
@@ -82,6 +86,8 @@ public class Capitec
         wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//html/body/div[7]")));
     }
 
+
+    //Method to be called after user confirms beneficiary on banking app
     public static void conPay1()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -99,6 +105,8 @@ public class Capitec
 
         driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame"))));
 
+
+        //Gets amount from front end
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@name = 'amount']"))).SendKeys("1");
 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[text() = 'Pay this amount now (Money will be available within 48 hours)']"))).Click();
@@ -111,7 +119,9 @@ public class Capitec
 
         wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//html/body/div[4]")));
     }
+    
 
+    //Method to be called after payment is complete to confirm status of request
     public static void confirmPay()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -136,6 +146,8 @@ public class Capitec
 
     }
 
+
+    //Removes added beneficiary
     public static void conPay2()
     {
         

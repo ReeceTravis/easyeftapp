@@ -12,7 +12,7 @@ namespace easyeftthc
         public static string stat;
 
 
-        //REFER TO NEDBANKAUTH for how methods were called
+        //This method should be called on the login button
         public static void NedbankLog(String email, String pin, String password)
         {
             ChromeOptions option = new ChromeOptions();
@@ -25,6 +25,7 @@ namespace easyeftthc
 
             driver.SwitchTo().Frame(wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//frame[@name = 'frameMain']"))));
 
+            //user credintials to be stored in string and the called from the front end
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'ProfileId']"))).SendKeys(email);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'PinNo']"))).SendKeys(pin);
@@ -42,6 +43,8 @@ namespace easyeftthc
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='PageBody']/div[4]")));
         }
 
+
+        //Only after user confirms request on banking app the script continues below
         public static void conCap(/*string rec*/)
         {
 
@@ -68,6 +71,8 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'ctl00_ctpPageContent_OnceOffPaymentsAddTransaction_txtPaymentNotificationDetail']"))).SendKeys("traversek@gmail.com");
 
+
+            //Amount to come from end
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'ctl00_ctpPageContent_OnceOffPaymentsAddTransaction_txtAmount']"))).SendKeys("1");
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'ctl00_ctpPageContent_btnMakeSinglePayment']"))).Click();
@@ -81,6 +86,8 @@ namespace easyeftthc
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='PageBody']/div[4]")));
         }
 
+
+        //Only after paymetn is completed following will confirm or deny whether transaction was successful, user should be made aware of the result
         public static void confirmPay()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

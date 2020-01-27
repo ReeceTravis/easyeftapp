@@ -17,7 +17,7 @@ namespace easyeftthc
         public static string tphrase2;
 
 
-        //REFER TO ABSAAUTH AND ABSAPHRASECAPTURE on how methods were used
+        //Method to be called after clicking login button
         public static void ABSALog(String email, String pin, String password)
         {
             ChromeOptions option = new ChromeOptions();
@@ -28,6 +28,8 @@ namespace easyeftthc
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
 
+
+            //Credentials to be called from the front end
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'j_username']"))).SendKeys(email);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id = 'j_pin']"))).SendKeys(pin);
@@ -38,6 +40,8 @@ namespace easyeftthc
 
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff1']")));
 
+
+            //Finds which fields ae requested for the password phrase
             cphrase1 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff1']")).GetAttribute("num");
             cphrase2 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff2']")).GetAttribute("num");
             cphrase3 = driver.FindElement(By.XPath("//label[@id = 'id_pff2']/..//input[@id = 'pff3']")).GetAttribute("num");
@@ -45,6 +49,8 @@ namespace easyeftthc
             
         }
 
+
+        //After logging in navigates to payment screen, user will have to confirm on banking app
         public static void payNav()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -66,6 +72,8 @@ namespace easyeftthc
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text() = 'Seconds remaining']")));
         }
 
+
+        //Method should be called after user has conirmed payment method on banking app
         public static void makepay()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
